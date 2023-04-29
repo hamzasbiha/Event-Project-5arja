@@ -1,0 +1,29 @@
+"eventname": "nouba",
+  "img": "LONGTEXT NOT NULL",
+  "video" :"LONGTEXT NULL",
+  "describtion": "LONGTEXT NOT NULL",
+  "date": "25/5/12",
+  "price": 25,
+  "grade" :25,
+  "catgorie" :"VARCHAR(45) NOT NULL"
+   "eventname": "nouba",
+  "event planer_id":1,
+  "img": "dsdsdsd",
+  "video" :"LONGTEXT NULL",
+  "describtion":"LONGTEXT NOT NULL",
+  "date":"2023-4-26",
+  "price":25,
+  "grade" :25,
+  "catgorie":"VARCHAR(45) NOT NULL"
+
+
+
+ 
+  "eventName": "noba",
+  "img":"LONGTEXT NOT NULL",
+  "description":"LONGTEXT NOT NULL",
+  "date":"2023-04-28 15:07:42",
+  "price":123,
+  "grade":1,
+  "category":"VARCHAR(45) NOT NULL",
+  "eventPlaner_id":1

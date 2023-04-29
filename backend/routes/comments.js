@@ -9,6 +9,6 @@ const { getAllcomments, addcomments, getOnecomments ,deleteOnecomments} = requir
 router.get('/getAllcomments', getAllcomments);
 router.get('/:idcomments', getOnecomments);
 router.post('/addcomments', addcomments);
-router.delete('/:idcomments', deleteOnecomments)
+router.delete('/:id', deleteOnecomments)
 
 module.exports = router;

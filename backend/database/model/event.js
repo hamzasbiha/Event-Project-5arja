@@ -19,7 +19,8 @@ module.exports = {
       },
       
       add: function(callback,eventInfo) {
-        const sql = 'INSERT INTO event set ?' 
+     
+        const sql = 'INSERT INTO  `event` SET ?' 
         conn.query(sql,eventInfo,function (error, results) {
           callback(error, results);
         });  
