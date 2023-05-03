@@ -7,7 +7,7 @@ const { getAllevent_attendance, addevent_attendance, getOneevent_attendance ,del
 
 
 router.get('/getAllevent_attendance', getAllevent_attendance);
-router.get('/:idevent_attendance', getOneevent_attendance);
+router.get('/:id', getOneevent_attendance);
 router.post('/addevent_attendance', addevent_attendance);
 router.delete('/:id', deleteOneevent_attendance)
 

@@ -7,7 +7,7 @@ const { getAllcomments, addcomments, getOnecomments ,deleteOnecomments} = requir
 
 
 router.get('/getAllcomments', getAllcomments);
-router.get('/:idcomments', getOnecomments);
+router.get('/:id', getOnecomments);
 router.post('/addcomments', addcomments);
 router.delete('/:id', deleteOnecomments)
 

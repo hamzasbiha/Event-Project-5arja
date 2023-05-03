@@ -5,9 +5,6 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
--- -----------------------------------------------------
 -- Schema ed
 -- -----------------------------------------------------
 
@@ -46,6 +43,7 @@ CREATE TABLE IF NOT EXISTS `ed`.`client` (
   `img` LONGTEXT NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -63,6 +61,7 @@ CREATE TABLE IF NOT EXISTS `ed`.`post` (
     FOREIGN KEY (`client_id`)
     REFERENCES `ed`.`client` (`id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -85,22 +84,7 @@ CREATE TABLE IF NOT EXISTS `ed`.`comments` (
     FOREIGN KEY (`post_id`)
     REFERENCES `ed`.`post` (`id`))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb3;
-
-
--- -----------------------------------------------------
--- Table `ed`.`event_planer`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ed`.`event_planer` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `firstName` VARCHAR(45) NOT NULL,
-  `lastName` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
-  `phoneNumber` VARCHAR(45) NOT NULL,
-  `CIN` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -117,13 +101,16 @@ CREATE TABLE IF NOT EXISTS `ed`.`event` (
   `price` INT NOT NULL,
   `grade` INT NOT NULL,
   `category` VARCHAR(45) NOT NULL,
-  `eventPlaner_id` INT NOT NULL,
+  `admin_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_event_event_planer_idx` (`eventPlaner_id` ASC) VISIBLE,
-  CONSTRAINT `fk_event_event_planer`
-    FOREIGN KEY (`eventPlaner_id`)
-    REFERENCES `ed`.`event_planer` (`id`))
+  INDEX `fk_event_admin1_idx` (`admin_id` ASC) VISIBLE,
+  CONSTRAINT `fk_event_admin1`
+    FOREIGN KEY (`admin_id`)
+    REFERENCES `ed`.`admin` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -161,6 +148,7 @@ CREATE TABLE IF NOT EXISTS `ed`.`feedback` (
     FOREIGN KEY (`client_id`)
     REFERENCES `ed`.`client` (`id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -185,6 +173,7 @@ CREATE TABLE IF NOT EXISTS `ed`.`ticket` (
     FOREIGN KEY (`event_id`)
     REFERENCES `ed`.`event` (`id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8mb3;
 
 

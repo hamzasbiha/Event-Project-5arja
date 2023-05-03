@@ -4,7 +4,7 @@ const app = express();
 
 
 const eventRoute = require('./routes/event');
-const eventplanerRoute = require('./routes/eventplaner');
+const eventplanerRoute = require('./routes/admin');
 const clientRoute = require('./routes/client');
 const commentsRoute = require('./routes/comments');
 const postRoute = require('./routes/post');

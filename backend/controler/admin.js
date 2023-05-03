@@ -1,5 +1,5 @@
 
-const eventplaners=require("../database/model/eventplaner")
+const eventplaners=require("../database/model/admin")
 module.exports = {
     getAllEventplaner: function(req, res) {
         eventplaners.getAll(function(err, results) {
