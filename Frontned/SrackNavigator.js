@@ -10,7 +10,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from "@expo/vector-icons";
 import tailwind from 'react-native-tailwindcss';
 import { Entypo } from "@expo/vector-icons";
-import { BlurView } from 'expo-blur';
+import Event from './Screens/Event';
+import Login from './Screens/Login';
 
 
 const SrackNavigator = () => {
@@ -50,7 +51,7 @@ const SrackNavigator = () => {
                     }}
                 />
                 <Tab.Screen
-                    name="ticket"
+                    name="test"
                     component={TicketScreen}
                     options={{
                         tabBarLabel: "ticket",
@@ -70,8 +71,8 @@ const SrackNavigator = () => {
                     }}
                 />
                 <Tab.Screen
-                    name="Profile"
-                    component={ProfileScreen}
+                    name="login"
+                    component={Event}
                     options={{
                         tabBarLabel: "Profile",
                         headerShown: false,
