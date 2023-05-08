@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -12,7 +13,9 @@ import { Entypo } from '@expo/vector-icons';
 import Seeallticket from './Screens/Seeallticket';
 import LoginScreen from './Screens/LoginScreen';
 import WelcomeH from './Screens/WelcomeH';
-import Singup from './Screens/Singup';
+
+import Singnup from './Screens/Singnup'
+
 
 
 
@@ -46,10 +49,12 @@ const StackNavigator = () => {
               },
             }}
           />
+
                                                       {/* login condition */}
           <Tab.Screen
             name="account"
             component={Singup}
+
             options={{
               tabBarButton: () => null, // Hide the tab button
               tabBarLabelStyle: { display: "none" }, // Hide the tab label
