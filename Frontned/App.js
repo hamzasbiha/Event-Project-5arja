@@ -8,12 +8,14 @@ import Seeallticket from './Screens/Seeallticket';
 import { createStackNavigator } from '@react-navigation/stack';
 import Drawers from './Drawers';
 
+
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
    
     <> 
+   
       <StackNavigator /> 
       {/* <Drawers /> */}
     </>
