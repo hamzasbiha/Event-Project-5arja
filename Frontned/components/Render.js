@@ -29,7 +29,7 @@ const Render = () => {
     const renderItem = ({ item, index }) => (
         <TouchableOpacity onPress={() => handleImagePress(item)}>
             <View style={{ marginLeft: 20 }}>
-                <ImageBackground source={{ uri: item.title }} borderRadius={SIZES.radius} resizeMode='cover' style={{ width: 330, height: 350, marginTop: 20 }} />
+                <ImageBackground source={{ uri: item.title }}  resizeMode='cover' style={{ width: 330, height: 350, marginTop: 20 }} />
                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginLeft: 20, marginTop: -80 }}>
                     <View>
                         <McText h2>Tale of us</McText>
