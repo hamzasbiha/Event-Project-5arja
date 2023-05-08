@@ -10,8 +10,15 @@ import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from "@expo/vector-icons";
 import tailwind from 'react-native-tailwindcss';
 import { Entypo } from "@expo/vector-icons";
+
 import Event from './Screens/Event';
 import Login from './Screens/Login';
+
+import { BlurView } from 'expo-blur';
+import Seeallticket from './Screens/Seeallticket';
+import LoginScreen from './Screens/LoginScreen'
+import WelcomeH from './Screens/WelcomeH'
+
 
 
 const SrackNavigator = () => {
@@ -19,15 +26,10 @@ const SrackNavigator = () => {
     const Stack = createNativeStackNavigator();
     function BotttomTabs() {
         return (
-
             <Tab.Navigator
                 screenOptions={{
-                    tabBarStyle: {
-                        backgroundColor: 'black',
-                        height: 100,
-                        borderTopWidth: 1,
-                        borderTopColor: 'white',
-                    },
+                    tabBarStyle: styles.bottomTabBar,
+
                 }}
             >
                 <Tab.Screen
@@ -38,18 +40,19 @@ const SrackNavigator = () => {
                         headerShown: false,
                         tabBarIcon: ({ focused }) =>
                             focused ? (
-                                <Entypo name="home" size={24} color="#FFB703" />
+                                <Entypo name="home" size={34} color="#FFB703" style={{ margin: 0 }} />
                             ) : (
-                                <AntDesign name="home" size={24} color="white" />
+                                <AntDesign name="home" size={28} color="white" style={{ margin: 0 }} />
                             ),
                         tabBarLabelStyle: {
-                            fontSize: 11,
+                            fontSize: 13,
                             fontWeight: "600",
-                            marginBottom: 10,
+
                             color: '#FFB703',
                         },
                     }}
                 />
+
                 <Tab.Screen
                     name="test"
                     component={TicketScreen}
@@ -58,14 +61,16 @@ const SrackNavigator = () => {
                         headerShown: false,
                         tabBarIcon: ({ focused }) =>
                             focused ? (
-                                <Entypo name="ticket" size={24} color="#FFB703" />
+                                <Entypo name="ticket" size={34} color="#FFB703" />
                             ) : (
-                                <Entypo name="ticket" size={24} color="white" />
+                                <Entypo name="ticket" size={28} color="white" style={{ margin: 0 }} />
                             ),
                         tabBarLabelStyle: {
-                            fontSize: 11,
+                            fontSize: 13,
                             fontWeight: "600",
-                            marginBottom: 10,
+
+
+
                             color: '#FFB703',
                         },
                     }}
@@ -78,16 +83,19 @@ const SrackNavigator = () => {
                         headerShown: false,
                         tabBarIcon: ({ focused }) =>
                             focused ? (
-                                <Ionicons name="person" size={24} color="#FFB703" />
+                                <Ionicons name="person" size={30} color="#FFB703" />
 
                             ) : (
-                                <Ionicons name="person-outline" size={24} color="white" />
+                                <Ionicons name="person-outline" size={28} color="white" />
                             ),
                         tabBarLabelStyle: {
-                            fontSize: 11,
+                            fontSize: 13,
                             fontWeight: "600",
-                            marginBottom: 10,
+
+
+
                             color: '#FFB703',
+
                         },
                     }}
                 />
@@ -102,14 +110,29 @@ const SrackNavigator = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator>
+                <Stack.Screen name="WelcomeH" component={WelcomeH} options={{ headerShown: false }} />
 
                 <Stack.Screen name="main" component={BotttomTabs} options={{ headerShown: false }} />
-
+                <Stack.Screen name="see all" component={Seeallticket} options={{ headerShown: false }} />
+                <Stack.Screen name="tikcet" component={TicketScreen} options={{ headerShown: false }} />
+                <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
             </Stack.Navigator>
         </NavigationContainer>
     )
 }
 
 export default SrackNavigator
-
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    bottomTabBar: {
+        backgroundColor: 'transparent',
+        borderTopWidth: 0,
+        position: 'absolute',
+        height: 90,
+        justifyContent: 'center',
+        alignItems: 'center',
+        shadowColor: 'black',
+        shadowOpacity: 0.2,
+        shadowRadius: 10,
+        elevation: 10,
+    },
+});
